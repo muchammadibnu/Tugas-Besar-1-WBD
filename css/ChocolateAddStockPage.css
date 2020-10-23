@@ -1,0 +1,92 @@
+body header{
+    border-bottom: 1.5px solid;
+    margin: 0px;
+}
+body .chocolate .chocolateDetail img{
+    width: 300px;
+    height: 260px;
+    margin-right: 20px;
+}
+
+body .chocolate h2{
+    margin-bottom: 2px;
+}
+
+body .chocolate .chocolateDetail h2:first-child{
+    margin-top: 1px;
+}
+
+body .chocolate, body .submit{
+    margin-left: 40px;
+}
+body .chocolate .chocolateDetail .detail{
+    padding-right: 100px;
+}
+body .chocolate .chocolateDetail{
+    display: flex;
+}
+body .chocolate{
+    margin-bottom: 30px;
+}
+
+.submit{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 5%;
+}
+h3,p{
+    margin: 1px;
+    text-align: justify;
+}
+.submit button{
+    background-color :white;
+    color: black;
+    border: slategray;
+    border-style: solid;
+    border-width: 2px;
+    transition: 0.3s ease;
+    padding: 15px 60px;
+}
+.submit button:last-child{
+    margin-right: 40px;
+}
+button:hover{
+    background-color: black;
+    color :white;
+}
+#countAmount{
+    width: 134px;
+    border: grey 1px solid;
+    padding: 2px 5px;
+    display: flex;
+}
+a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 26px;
+    border-radius: 100%;
+    border: gray 1px solid;
+    color: black;
+    padding: 2px 5px;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+a:hover{
+    background-color: black;
+    color :white;
+}
+
+#countAmount a:first-child{
+    margin-right: 30px;
+}
+#countAmount a:last-child{
+    margin-left: 30px;
+}
+#countAmount p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

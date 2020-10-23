@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<?php
+    if (!isset($_COOKIE['login_string'])){
+        echo "<script type='text/javascript'>alert('You have to login first');</script>";
+        echo "<script type='text/javascript'>document.location.href='login.php';</script>"; 
+    }
+    require_once("connection.php");
+    $login_string = md5($_COOKIE['login_string']);
+    $sql = "SELECT * FROM cookie_data WHERE login_string = '$login_string'";
+    $result = $conn->query($sql);
+    if ($result->num_rows == 0){
+        echo "<script type='text/javascript'>alert('You have to login first');</script>";
+        echo "<script type='text/javascript'>document.location.href='login.php';</script>"; 
+    }
+?>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolate Page</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/ChocolatePage.css'>
+</head>
+<body>
+    <header>
+        <p>haaaaaa</p>
+    </header>
+    <div class="chocolate">
+        <?php
+            $chocoID = $_GET["chocoID"];
+            $sql = "SELECT name, price, sold, amount, description, photo FROM product where id=$chocoID";
+            $result = $conn->query($sql);
+            if ($result->num_rows >0){
+                $row = $result->fetch_assoc();
+            }
+            else{
+                echo "<script type='text/javascript'>alert('NOT FOUND');</script>";
+                echo "<script type='text/javascript'>document.location.href='index.php';</script>"; 
+            }
+        ?>
+        <h2><?php echo $row["name"]; ?></h2>
+        <div class="chocolateDetail">
+        <img src="<?php echo $row["photo"]; ?>" alt="<?php echo $row["name"]; ?>">
+            <div class="detail">
+            <h2>Amount sold: <?php echo $row["sold"]; ?></h2>
+            <h2>Price: Rp <?php 
+                $price = $row["price"];
+                $str ="";
+                $count=0;
+                while($price>=1){
+                    $str = ($price % 10).$str;
+                    $price = floor($price / 10);
+                    $count = $count + 1;
+                    if($count % 3 ==0){
+                        $str=".".$str;
+                    }
+                }
+                echo $str ?>,00</h2>
+            <h2>Amount: <?php echo $row["amount"]; ?></h2>
+            <h2>Description</h2>
+            <p><?php echo $row["description"]; ?></p>
+            </div>
+        </div>
+    </div>
+    <div class="BuyNow">
+        <a href="ChocolateBuyPage.php?chocoID=<?php echo $_GET["chocoID"];?>">Buy Now</a>
+    </div>
+</body>
+</html>

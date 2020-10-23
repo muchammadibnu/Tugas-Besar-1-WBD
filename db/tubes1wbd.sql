@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2020 at 02:27 PM
+-- Generation Time: Oct 23, 2020 at 10:23 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -37,7 +37,31 @@ CREATE TABLE `cookie_data` (
 --
 
 INSERT INTO `cookie_data` (`login_string`, `username`) VALUES
-('663cf1657dc63e7a374ab6231fe5366f', 'taufiq');
+('663cf1657dc63e7a374ab6231fe5366f', 'taufiq'),
+('86d09a51e17af26f3c435e84dd0ad0c8', 'ibnu');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product`
+--
+
+CREATE TABLE `product` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `price` int(11) DEFAULT NULL,
+  `sold` int(11) DEFAULT NULL,
+  `amount` int(11) DEFAULT NULL,
+  `Description` varchar(500) DEFAULT NULL,
+  `photo` varchar(1000) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`id`, `name`, `price`, `sold`, `amount`, `Description`, `photo`) VALUES
+(1, 'Chocolate 2', 3000, 12, 14, 'Coklat ini merupakan coklat yang dipanggang hingga meleleh, setelah itu dibentuk lalu dibekukan kami juga kurang mengerti mengapa kami melakukan itu', 'contoh.png');
 
 -- --------------------------------------------------------
 
@@ -61,7 +85,12 @@ CREATE TABLE `transaction` (
 
 INSERT INTO `transaction` (`chocolate_name`, `amount`, `total_price`, `date`, `time`, `address`, `username`) VALUES
 ('chocolate 1', 12, 12000, '2020-10-08', '07:12:05', 'jalan blablabla', 'taufiq'),
-('chocolate 1', 12, 12000, '2020-10-08', '07:12:05', 'jalan blablabla', 'taufiq');
+('chocolate 1', 12, 12000, '2020-10-08', '07:12:05', 'jalan blablabla', 'taufiq'),
+('Chocolate 2', 3, 9000, '2020-10-23', '09:55:24', 'aaaaa', 'ibnu'),
+('Chocolate 2', 3, 9000, '2020-10-23', '09:58:33', 'aaaaa', 'ibnu'),
+('Chocolate 2', 3, 9000, '2020-10-23', '09:59:17', 'aaaa', 'ibnu'),
+('Chocolate 2', 3, 9000, '2020-10-23', '10:01:37', 'jalanananananan', 'ibnu'),
+('Chocolate 2', 6, 18000, '2020-10-23', '10:03:14', 'aaaa', 'ibnu');
 
 -- --------------------------------------------------------
 
@@ -81,6 +110,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`username`, `email`, `password`, `role`) VALUES
+('ibnu', 'ibnu@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', 'user'),
 ('taufiq', 't@gmail.com', 'f4eff635e6dfe584a1a536dbc7718f3d', 'user');
 
 --
@@ -95,11 +125,29 @@ ALTER TABLE `cookie_data`
   ADD UNIQUE KEY `login_string` (`login_string`);
 
 --
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `index_id` (`id`) USING BTREE,
+  ADD KEY `secondary_atribute` (`name`,`price`,`sold`,`amount`,`Description`) USING HASH;
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`username`),
   ADD UNIQUE KEY `username` (`username`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
