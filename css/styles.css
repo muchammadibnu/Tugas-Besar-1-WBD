@@ -70,3 +70,8 @@ body{
     background-color:  #2b3147;
     color: white;
   }
+
+  #transactionTable a{
+      text-decoration: none;
+      color: black;
+  }
