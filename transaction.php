@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <?php
-    if (!isset($_COOKIE['login_string'])){
+    $isAlreadyLoggedIn = FALSE;
+    if (isset($_COOKIE['login_string'])){
+        require("connection.php");
+        $login_string = md5($_COOKIE['login_string']);
+    
+        $sql = "SELECT username FROM cookie_data WHERE login_string = '$login_string'";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0){
+            $isAlreadyLoggedIn = TRUE;
+        }
+        $conn->close();
+    }
+
+    if (!$isAlreadyLoggedIn){
         echo "<script type='text/javascript'>alert('You have to login first');</script>";
         echo "<script type='text/javascript'>document.location.href='login.php';</script>"; 
     }
@@ -14,7 +27,7 @@
     <h1>Transaction History</h1>
     <div class='container'>
         <?php 
-            require_once("connection.php");
+            require("connection.php");
             $login_string = md5($_COOKIE['login_string']);
         
             $sql = "SELECT username FROM cookie_data WHERE login_string = '$login_string'";
@@ -59,6 +72,7 @@
             if (!$isAdaTransaction){
                 echo '<p>There are no transaction yet</p>';
             }
+            $conn->close();
         ?>
     <div>
 
