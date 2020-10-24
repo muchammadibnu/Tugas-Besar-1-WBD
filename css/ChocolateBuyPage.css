@@ -65,6 +65,7 @@ body .Address form textarea{
 }
 
 .Address input, .Address a{
+    cursor: pointer;
     background: #2b3147;
     text-transform: uppercase;
     color: white;

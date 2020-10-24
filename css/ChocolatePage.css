@@ -57,6 +57,7 @@ body .BuyNow a{
     position: absolute;
     right: 60px;    
     text-decoration: none;
+    font: 400 13.3333px Arial;
 }
 
 body .BuyNow a:hover{
