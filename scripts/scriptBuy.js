@@ -50,7 +50,7 @@ function doBuy(event){
     }
     else{
         let amount = document.getElementsByTagName("p")[2].innerHTML;
-        let name = document.getElementsByClassName("chocolateDetail")[0].getElementsByTagName("h2")[0].innerHTML;
+        let name = document.getElementsByTagName("h3")[0].innerHTML;
         console.log(address,amount,name,cost);
         var xhr = new XMLHttpRequest();
         let url = "action_buy.php";
@@ -76,5 +76,7 @@ function doBuy(event){
         xhr.send(params);  
     } 
 }
+
+
 
 formBuy.addEventListener('submit', doBuy);

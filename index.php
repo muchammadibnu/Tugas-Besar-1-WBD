@@ -12,6 +12,8 @@
         if (isset($_COOKIE['login_string'])){
             echo "already login<br>";
             echo "<a href='transaction.php'>transaction page</a><br>";
+            echo "<a href='ChocolatePage.php?chocoID=1'>Buy page</a><br>";
+            echo "<a href='ChocolateStockPage.php?chocoID=1'>Add Stock page</a><br>";
             echo "<a href='action_logout.php'>LOGOUT</a><br>";
         }    
         else{

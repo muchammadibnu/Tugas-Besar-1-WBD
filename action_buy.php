@@ -14,7 +14,7 @@
         $result = $conn->query($sql);
         if($result->num_rows > 0){
             $row = $result->fetch_assoc();
-            if($row["amount"]>=$amount){
+            if($row["amount"] >=$amount){
                 $sql ="SELECT username FROM cookie_data WHERE login_string='$login_string'";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0){

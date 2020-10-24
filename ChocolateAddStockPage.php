@@ -70,7 +70,7 @@
     </div>
     <div class="submit">
         <button onclick="doSubmitAdd(<?php echo $_GET["chocoID"]; ?>)">Add</button>
-        <button>Cancel</button>
+        <button onclick="location.href='ChocolateStockPage.php?chocoID=<?php echo $_GET["chocoID"];?>'">Cancel</button>
     </div>
     <script src="scripts/scriptAddStock.js"> </script>
 </body>

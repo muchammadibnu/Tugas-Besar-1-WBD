@@ -36,6 +36,10 @@
                 echo "<script type='text/javascript'>alert('NOT FOUND');</script>";
                 echo "<script type='text/javascript'>document.location.href='index.php';</script>"; 
             }
+            if($row["amount"]==="0"){
+                echo "<script type='text/javascript'>alert('Out of Stock');</script>";
+                echo "<script type='text/javascript'>document.location.href='ChocolatePage.php?chocoID=$chocoID';</script>"; 
+            }
         ?>
         <h2>Buy Chocolate</h2>
         <div class="chocolateDetail">
@@ -56,23 +60,23 @@
                         }
                     }
                     echo $str ?>,00</h4>
-                    <h4><span>Amount remaining:</span> <?php echo $row["amount"]; ?></h4>
-                    <h4><span>Description</span></h4>
-                    <p><?php echo $row["description"]; ?></p>
-                    <div class="amount">
-                        <div class="amountToBuy">
-                            <h3>Amount to buy:</h3>
-                            <div class="countAmount">
-                                <a onclick="doDecreaseAmountStock(<?php echo $row['price']; ?>)"><b>-</b></a>
-                                <p>1</p>
-                                <a onclick="doAddAmountStock(<?php echo $row['amount']; ?>, <?php echo $row['price']; ?>)"><b>+</b></a>
-                            </div>
-                        </div>
-                        <div class="totalPrice">
-                            <h3>Total price:</h3>
-                            <h2>Rp <?php echo $str;?>,00</h2>
+                <h4><span>Amount remaining:</span> <?php echo $row["amount"]; ?></h4>
+                <h4><span>Description</span></h4>
+                <p><?php echo $row["description"]; ?></p>
+                <div class="amount">
+                    <div class="amountToBuy">
+                        <h3>Amount to buy:</h3>
+                        <div class="countAmount">
+                            <a onclick="doDecreaseAmountStock(<?php echo $row['price']; ?>)"><b>-</b></a>
+                            <p>1</p>
+                            <a onclick="doAddAmountStock(<?php echo $row['amount']; ?>, <?php echo $row['price']; ?>)"><b>+</b></a>
                         </div>
                     </div>
+                    <div class="totalPrice">
+                        <h3>Total price:</h3>
+                        <h2>Rp <?php echo $str;?>,00</h2>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

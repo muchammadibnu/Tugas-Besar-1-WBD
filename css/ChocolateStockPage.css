@@ -45,6 +45,7 @@ body .chocolate .chocolateDetail{
 body .chocolate .chocolateDetail p{
     text-align: justify;
     font-size: 14px;
+    margin-right: 100px;
 }
 
 body .BuyNow a{
