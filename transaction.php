@@ -54,11 +54,22 @@
                         </tr>
                     ';
                     while($row = $result->fetch_assoc()) {
+                        $price = $row["total_price"];
+                        $str ="";
+                        $count=0;
+                        while($price>=1){
+                            $str = ($price % 10).$str;
+                            $price = floor($price / 10);
+                            $count = $count + 1;
+                            if($count % 3 ==0){
+                                $str=".".$str;
+                            }
+                        }
                         echo '
                             <tr>
                                 <td><a href=chocolate_detail?chocolate_name='.$row['chocolate_name'].'>'.$row['chocolate_name'].'</a></td>
                                 <td>'.$row['amount'].'</td> 
-                                <td>'.$row['total_price'].'</td>
+                                <td>Rp '.$str.',00</td>
                                 <td>'.date('j F Y',strtotime($row['date'])).'</td>
                                 <td>'.$row['time'].'</td>
                                 <td>'.$row['address'].'</td>

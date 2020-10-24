@@ -46,7 +46,7 @@ function doBuy(event){
     let address = document.getElementById("addr").value;
     if(address==""){
         alert("Please input address!");
-        document.location.href=document.location.href;
+        document.location.reload();
     }
     else{
         let amount = document.getElementsByTagName("p")[2].innerHTML;
