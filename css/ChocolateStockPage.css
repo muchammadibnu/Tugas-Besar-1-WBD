@@ -1,3 +1,9 @@
+body{
+    font-family: "Roboto", sans-serif;
+    color: rgba(0,0,0,.8);
+    background-color: #FAFAFA;
+    margin: auto;
+}
 body header{
     border-bottom: 1.5px solid;
     margin: 0px;
@@ -7,30 +13,46 @@ body .chocolate .chocolateDetail img{
     height: 260px;
     margin-right: 20px;
 }
-body .chocolate .chocolateDetail h2:first-child{
+body .chocolate{
+    margin: 30px;
+    background-color: white;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.281);
+    border-radius: 10px;;
+    padding: 10px;
+}
+body .chocolate h2:first-child{
+    margin-left: 40px;
+    margin-bottom: 0px;
+}
+body .chocolate .chocolateDetail .detail h3{
+    padding-right: 100px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+body .chocolate .chocolateDetail h3:first-child{
     margin: 1px;
 }
-body .chocolate{
-    margin-left: 40px;
-    margin-bottom: 60px;
-}
-body .chocolate .chocolateDetail .detail{
-    padding-right: 100px;
+body .chocolate .chocolateDetail .detail span{
+    color: rgba(0,0,0,.5);
 }
 body .chocolate .chocolateDetail{
+    margin: 0 20px;
+    padding: 10px 0px 30px 20px;
     display: flex;
+    border-radius: 10px;
 }
 
 body .chocolate .chocolateDetail p{
     text-align: justify;
+    font-size: 14px;
 }
 
 body .BuyNow a{
-    background-color :white;
-    color: black;
-    border: slategray;
-    border-style: solid;
-    border-width: 2px;
+    background: #2b3147;
+    text-transform: uppercase;
+    border-radius: 10px;
+    color: white;
+    background: #2b3147;
     transition: 0.3s ease;
     padding: 20px 60px;
     position: absolute;
@@ -39,6 +61,6 @@ body .BuyNow a{
 }
 
 body .BuyNow a:hover{
-    background-color: black;
-    color :white;
+    background-color: rgb(220, 220, 220);
+    color :#2b3147;
 }

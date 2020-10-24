@@ -39,10 +39,10 @@
         ?>
         <h2><?php echo $row["name"]; ?></h2>
         <div class="chocolateDetail">
-        <img src="<?php echo $row["photo"]; ?>" alt="<?php echo $row["name"]; ?>">
+            <img src="<?php echo $row["photo"]; ?>" alt="<?php echo $row["name"]; ?>">
             <div class="detail">
-                <h2>Amount sold: <?php echo $row["sold"]; ?></h2>
-                <h2>Price: Rp <?php 
+                <h3><span>Amount Sold:</span> <?php echo $row["sold"]; ?></h3>
+                <h3><span>Price:</span> Rp <?php 
                     $price = $row["price"];
                     $str ="";
                     $count=0;
@@ -54,9 +54,9 @@
                             $str=".".$str;
                         }
                     }
-                    echo $str ?>,00</h2>
-                <h2>Amount: <?php echo $row["amount"]; ?></h2>
-                <h2>Description</h2>
+                    echo $str ?>,00</h3>
+                <h3><span>Amount:</span> <?php echo $row["amount"]; ?></h3>
+                <h3><span>Description</span></h3>
                 <p><?php echo $row["description"]; ?></p>
             </div>
         </div>

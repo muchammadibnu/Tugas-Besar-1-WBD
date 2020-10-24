@@ -39,11 +39,11 @@
         ?>
         <h2>Add Stock</h2>
         <div class="chocolateDetail">
-        <img src="<?php echo $row["photo"]; ?>" alt="<?php echo $row["name"]; ?>">
+            <img src="<?php echo $row["photo"]; ?>" alt="<?php echo $row["name"]; ?>">
             <div class="detail">
-                <h2><?php echo $row["name"]; ?></h2>
-                <h3>Amount sold: <?php echo $row["sold"]; ?></h3>
-                <h3>Price: Rp <?php 
+                <h3><?php echo $row["name"]; ?></h3>
+                <h4><span>Amount Sold:</span> <?php echo $row["sold"]; ?></h4>
+                <h4><span>Price:</span> Rp <?php 
                     $price = $row["price"];
                     $str ="";
                     $count=0;
@@ -55,9 +55,9 @@
                             $str=".".$str;
                         }
                     }
-                    echo $str ?>,00</h3>
-                <h3>Amount remaining: <?php echo $row["amount"]; ?></h3>
-                <h3>Description</h3>
+                    echo $str ?>,00</h4>
+                <h4><span>Amount remaining:</span> <?php echo $row["amount"]; ?></h3>
+                <h4><span>Description</span></h4>
                 <p><?php echo $row["description"]; ?></p><br>
                 <h3>Amount to Add:</h3>
                 <div id="countAmount">

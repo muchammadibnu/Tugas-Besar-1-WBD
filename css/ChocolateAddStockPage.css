@@ -1,3 +1,9 @@
+body{
+    font-family: "Roboto", sans-serif;
+    color: rgba(0,0,0,.8);
+    background-color: #FAFAFA;
+    margin: auto;
+}
 body header{
     border-bottom: 1.5px solid;
     margin: 0px;
@@ -7,22 +13,35 @@ body .chocolate .chocolateDetail img{
     height: 260px;
     margin-right: 20px;
 }
-
-body .chocolate h2{
-    margin-bottom: 2px;
+body .chocolate{
+    margin: 30px;
+    background-color: white;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.281);
+    border-radius: 10px;
+    padding: 10px;
+}
+body .chocolate h2:first-child{
+    margin-left: 40px;
+    margin-bottom: 0;
 }
 
-body .chocolate .chocolateDetail h2:first-child{
+body .chocolate .chocolateDetail h3{
+    margin-left: 0;
     margin-top: 1px;
 }
-
-body .chocolate, body .submit{
+body .chocolate .chocolateDetail h3{
+    margin: 0;
+}
+body .submit{
     margin-left: 40px;
 }
 body .chocolate .chocolateDetail .detail{
     padding-right: 100px;
+    margin-bottom: 15px;
 }
 body .chocolate .chocolateDetail{
+    margin: 0 20px;
+    padding: 10px 0px 30px 20px;
     display: flex;
 }
 body .chocolate{
@@ -34,49 +53,54 @@ body .chocolate{
     flex-direction: row-reverse;
     margin-right: 5%;
 }
-h3,p{
+body .chocolate .chocolateDetail .detail h4,body .chocolate .chocolateDetail .detail p{
     margin: 1px;
     text-align: justify;
 }
 .submit button{
-    background-color :white;
-    color: black;
-    border: slategray;
-    border-style: solid;
-    border-width: 2px;
+    background: #2b3147;
+    text-transform: uppercase;
+    color: white;
+    border: 0;
     transition: 0.3s ease;
     padding: 15px 60px;
+    text-decoration: none;
+    border-radius: 10px;
 }
 .submit button:last-child{
     margin-right: 40px;
+    padding: 15px 40px;
 }
 button:hover{
-    background-color: black;
-    color :white;
+    background-color: rgb(220, 220, 220);
+    color :#2b3147;
 }
 #countAmount{
     width: 134px;
-    border: grey 1px solid;
+    border: 1px solid rgba(0,0,0,.09);
+    color: rgba(0,0,0,.8);
     padding: 2px 5px;
+    background: transparent;
+    line-height: 1;
     display: flex;
 }
 a{
+    cursor: pointer;
     display: flex;
+    border: 1px solid rgba(0,0,0,.09);
     justify-content: center;
     align-items: center;
     width: 20px;
     height: 26px;
     border-radius: 100%;
-    border: gray 1px solid;
-    color: black;
     padding: 2px 5px;
     transition: 0.3s ease;
     text-decoration: none;
 }
 
 a:hover{
-    background-color: black;
-    color :white;
+    background-color: rgb(220, 220, 220);
+    color :#2b3147;
 }
 
 #countAmount a:first-child{
@@ -89,4 +113,11 @@ a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+body .chocolate .chocolateDetail .detail p{
+    font-size: 14px;
+}
+body .chocolate .chocolateDetail .detail span{
+    color: rgba(0,0,0,.5);
 }

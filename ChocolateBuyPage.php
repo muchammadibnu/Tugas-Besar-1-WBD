@@ -41,9 +41,9 @@
         <div class="chocolateDetail">
             <img src="<?php echo $row["photo"]; ?>" alt="<?php echo $row["name"]; ?>">
             <div class="detail">
-            <h2><?php echo $row["name"]; ?></h2>
-                <h3>Amount sold: <?php echo $row["sold"]; ?></h3>
-                <h3>Price: Rp <?php 
+                <h3><?php echo $row["name"]; ?></h3>
+                <h4><span>Amount Sold:</span> <?php echo $row["sold"]; ?></h4>
+                <h4><span>Price:</span> Rp <?php 
                     $price = $row["price"];
                     $str ="";
                     $count=0;
@@ -55,30 +55,30 @@
                             $str=".".$str;
                         }
                     }
-                    echo $str ?>,00</h3>
-                <h3>Amount remaining: <?php echo $row["amount"]; ?></h3>
-                <h3>Description</h3>
-                <p><?php echo $row["description"]; ?></p>
-                <div class="amount">
-                    <div class="amountToBuy">
-                        <h3>Amount to buy:</h3>
-                        <div class="countAmount">
-                            <a onclick="doDecreaseAmountStock(<?php echo $row['price']; ?>)"><b>-</b></a>
-                            <p>1</p>
-                            <a onclick="doAddAmountStock(<?php echo $row['amount']; ?>, <?php echo $row['price']; ?>)"><b>+</b></a>
+                    echo $str ?>,00</h4>
+                    <h4><span>Amount remaining:</span> <?php echo $row["amount"]; ?></h4>
+                    <h4><span>Description</span></h4>
+                    <p><?php echo $row["description"]; ?></p>
+                    <div class="amount">
+                        <div class="amountToBuy">
+                            <h3>Amount to buy:</h3>
+                            <div class="countAmount">
+                                <a onclick="doDecreaseAmountStock(<?php echo $row['price']; ?>)"><b>-</b></a>
+                                <p>1</p>
+                                <a onclick="doAddAmountStock(<?php echo $row['amount']; ?>, <?php echo $row['price']; ?>)"><b>+</b></a>
+                            </div>
+                        </div>
+                        <div class="totalPrice">
+                            <h3>Total price:</h3>
+                            <h2>Rp <?php echo $str;?>,00</h2>
                         </div>
                     </div>
-                    <div class="totalPrice">
-                        <h3>Total price:</h3>
-                        <h2>Rp <?php echo $str;?>,00</h2>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
     <div class="Address">
         <form id="formBuy">
-            <label for="address">Address:</label><br>
+            <label for="address"><b>Address:</b></label><br>
             <textarea name="address" id="addr" placeholder="Insert your address"></textarea><br><br>   
             <div class="submit">
                 <input type="submit" value="Buy">
