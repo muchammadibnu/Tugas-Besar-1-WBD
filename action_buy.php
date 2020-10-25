@@ -22,18 +22,10 @@
                     $username = $row["username"];
                     $sql = "INSERT INTO transaction(chocolate_name,amount,total_price,date,time,address,username) VALUES('$chocolateName', $amount, $totalPrice, '$date', '$time', '$address', '$username')";
                     if ($conn->query($sql) == TRUE){
-                        $sql = "UPDATE product SET amount=(SELECT amount from product where name='$chocolateName')-$amount WHERE name='$chocolateName'";
+                        $sql = "UPDATE product SET amount=(SELECT amount from product where name='$chocolateName')-$amount, sold=(SELECT sold from product where name='$chocolateName')+$amount WHERE name='$chocolateName'";
                         if ($conn->query($sql) == TRUE){
-                            $sql = "UPDATE product SET sold=(SELECT sold from product where name='$chocolateName')+$amount WHERE name='$chocolateName'";
-                            if ($conn->query($sql) == TRUE){
-                                $conn->close();
-                                echo "success";
-                                
-                            }
-                            else{
-                                echo $conn->error;
-                                $conn->close();
-                            }
+                            $conn->close();
+                            echo "success";
                         }
                         else{
                             echo $conn->error;

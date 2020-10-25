@@ -36,7 +36,7 @@ body .Address #formBuy{
     background-color: white;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.281);
     border-radius: 10px;
-    padding: 10px;
+    padding: 20px;
 }
 body .chocolate .chocolateDetail .detail span{
     color: rgba(0,0,0,.5);
@@ -55,13 +55,13 @@ body .Address form textarea, body .Address form label{
 }
 body .Address form textarea{
     border-radius: 10px;
-    width: 94.5%;
+    width: 96%;
     height: 80px;
 }
 .submit{
     display: flex;
     flex-direction: row-reverse;
-    margin-right: 5%;
+    margin-right: 20px;
 }
 
 .Address input, .Address a{

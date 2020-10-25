@@ -12,12 +12,29 @@
         echo "<script type='text/javascript'>alert('You have to login first');</script>";
         echo "<script type='text/javascript'>document.location.href='login.php';</script>"; 
     }
+    else{
+        $row = $result -> fetch_assoc();
+        $username = $row["username"];
+        $sql = "SELECT role FROM user WHERE username = '$username'";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0){
+            $row = $result -> fetch_assoc();
+            if($row["role"]!="admin"){
+                echo "<script type='text/javascript'>alert('User restricted');</script>";
+                echo "<script type='text/javascript'>document.location.href='index.php';</script>"; 
+            }
+        }
+        else{
+            echo "<script type='text/javascript'>alert('Server goes wrong');</script>";
+            echo "<script type='text/javascript'>document.location.reload();</script>"; 
+        }
+    }
 ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chocolaye Buy Page</title>
+    <title>Chocolate Add Stock Page</title>
     <link rel='stylesheet' type='text/css' media='screen' href='css/ChocolateAddStockPage.css'>
 </head>
 <body>

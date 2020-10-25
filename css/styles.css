@@ -32,6 +32,7 @@ body{
 }
 
 .form-auth button{
+    cursor: pointer;
     text-transform: uppercase;
     outline: 0;
     border-radius: 10px;
@@ -41,6 +42,13 @@ body{
     padding: 15px;
     color: #FFFFFF;
     font-size: 14px;
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+.form-auth button:hover{
+    background-color: rgb(220, 220, 220);
+    color :#2b3147;
 }
 
 .form-auth .errorNotif{

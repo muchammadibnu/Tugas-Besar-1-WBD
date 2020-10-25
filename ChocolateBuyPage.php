@@ -12,6 +12,35 @@
         echo "<script type='text/javascript'>alert('You have to login first');</script>";
         echo "<script type='text/javascript'>document.location.href='login.php';</script>"; 
     }
+    if (!isset($_COOKIE['login_string'])){
+        echo "<script type='text/javascript'>alert('You have to login first');</script>";
+        echo "<script type='text/javascript'>document.location.href='login.php';</script>"; 
+    }
+    require_once("connection.php");
+    $login_string = md5($_COOKIE['login_string']);
+    $sql = "SELECT * FROM cookie_data WHERE login_string = '$login_string'";
+    $result = $conn->query($sql);
+    if ($result->num_rows == 0){
+        echo "<script type='text/javascript'>alert('You have to login first');</script>";
+        echo "<script type='text/javascript'>document.location.href='login.php';</script>"; 
+    }
+    else{
+        $row = $result -> fetch_assoc();
+        $username = $row["username"];
+        $sql = "SELECT role FROM user WHERE username = '$username'";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0){
+            $row = $result -> fetch_assoc();
+            if($row["role"]!="user"){
+                echo "<script type='text/javascript'>alert('User restricted');</script>";
+                echo "<script type='text/javascript'>document.location.href='index.php';</script>"; 
+            }
+        }
+        else{
+            echo "<script type='text/javascript'>alert('Server goes wrong');</script>";
+            echo "<script type='text/javascript'>document.location.reload();</script>"; 
+        }
+    }
 ?>
 <html lang="en">
 <head>
