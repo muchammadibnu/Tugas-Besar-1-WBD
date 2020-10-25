@@ -65,8 +65,11 @@ function doRegister(event){
                     // all valid -> do post register
                     postRegister(username.value, email.value, password.value);
                 }
-                else{
+                else if(xhr.responseText =='invalid'){
                     errorNotifRegister.innerHTML = "<p>Username is not unique</p>";
+                }
+                else{
+                    errorNotifRegister.innerHTML = "<p>error: database connection went wrong</p>";
                 }
             }
         }
