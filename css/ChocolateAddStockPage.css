@@ -156,3 +156,34 @@ nav input[type=search] {
     margin-top: 8px;
     width: 300px;
 }
+
+@media screen and (max-width: 800px){
+    body .chocolate .chocolateDetail .detail p{
+        font-size: 10px;
+    }
+    h2{
+        font-size: 18px;
+    }
+    h3{
+        font-size: 16px;
+    }
+    h4{
+        font-size: 14px;
+    }
+    body .chocolate .chocolateDetail img{
+        width: 200px;
+        height: 160px;
+        margin-right: 20px;
+    }
+    body .submit button{
+        font-size: 14px;
+        padding: 10px 40px;
+    }
+    body .submit button:last-child{
+        padding: 10px 20px;
+        margin-right: 10px;
+    }
+    body .chocolate .chocolateDetail .detail .amount{
+        margin-top: 10px;
+    }
+}

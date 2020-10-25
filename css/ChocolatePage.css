@@ -98,3 +98,33 @@ nav input[type=search] {
     margin-top: 8px;
     width: 300px;
 }
+
+@media screen and (max-width: 800px){
+    body .chocolate .chocolateDetail .detail p{
+        font-size: 10px;
+        margin: 0;
+    }
+    body .chocolate .chocolateDetail .detail h2{
+        font-size: 18px;
+    }
+    body .chocolate .chocolateDetail .detail h3{
+        font-size: 16px;
+        margin: 10px 0;
+    }
+    body .chocolate .chocolateDetail h3:first-child{
+        margin: 1px;
+    }
+    body .chocolate .chocolateDetail .detail h4{
+        font-size: 14px;
+    }
+    body .chocolate .chocolateDetail img{
+        width: 200px;
+        height: 160px;
+        margin-right: 20px;
+    }
+    body .BuyNow a{
+        font-size: 14px;
+        padding: 15px 40px;
+        margin-right: 10px;
+    }
+}
