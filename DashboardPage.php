@@ -69,7 +69,7 @@ $result_user = mysql_query($query_user); -->
     </nav>
     
     <div class="hello">
-        <p>Hello, </p>
+        <p>Hello, admin</p>
     </div>
 
     <div class="view-all">
