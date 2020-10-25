@@ -21,5 +21,12 @@
 
     </nav>
     
+    <div class="hello">
+        <p>Hello, </p>
+    </div>
+
+    <div class="view-all">
+        <a href="">View all chocolate</a>
+    </div>
 </body>
 </html>
