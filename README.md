@@ -113,8 +113,8 @@ XAMPP dapat diinstall melalui pranala berikut : https://www.apachefriends.org/do
 ### Search Result Page
 ### Chocolate Detail Page
 #### Buy Chocolate Page
-![](screenshots/chocolatebuy.png)
 ![](screenshots/chocolatebuy2.png)
+![](screenshots/chocolatebuy.png)
 #### Add Stock Chocolate Page
 ![](screenshots/addStock.png)
 ![](screenshots/addStock2.png)
