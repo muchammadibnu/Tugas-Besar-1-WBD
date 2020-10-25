@@ -22,10 +22,25 @@
 <head>
     <title>Transaction Page</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel='stylesheet' type='text/css' media='screen' href='css/ChocolatePage.css'>
+
 </head>
 <body>
-    <h1>Transaction History</h1>
+    <header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">History</a>
+            <div class="search">
+                <form action="">
+                    <input type="search" placeholder="Search" required>
+                </form>
+            </div>
+            <a href="#">Log out</a>
+        </nav>
+    </header>
+    
     <div class='container'>
+        <h1>Transaction History</h1>
         <?php 
             require("connection.php");
             $login_string = md5($_COOKIE['login_string']);

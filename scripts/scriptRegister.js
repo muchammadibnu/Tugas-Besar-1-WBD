@@ -56,7 +56,7 @@ function doRegister(event){
         errorNotifRegister.innerHTML = newHTML;
     }
     else{ 
-        // check if there is a duplicate on username
+        // check if there is a duplicate on username or email
         var xhr = new XMLHttpRequest();
 
         xhr.onreadystatechange = function() {
@@ -66,7 +66,7 @@ function doRegister(event){
                     postRegister(username.value, email.value, password.value);
                 }
                 else if(xhr.responseText =='invalid'){
-                    errorNotifRegister.innerHTML = "<p>Username is not unique</p>";
+                    errorNotifRegister.innerHTML = "<p>Username or email is already taken</p>";
                 }
                 else{
                     errorNotifRegister.innerHTML = "<p>error: database connection went wrong</p>";
@@ -74,7 +74,7 @@ function doRegister(event){
             }
         }
        
-        xhr.open('GET', 'action_user.php?username=' + username.value);
+        xhr.open('GET', 'action_user.php?username=' + username.value + "&email=" +email.value);
         xhr.send();
     }
 }

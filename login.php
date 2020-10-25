@@ -28,7 +28,7 @@
       <br>
       <div class="errorNotif" id="errorNotifLogin"></div>
       <form id="formLogin">
-          <input type="text" id="username" name="username" placeholder="Username">
+          <input type="text" id="email" name="email" placeholder="Email">
           <input type="password" id="password" name="password" placeholder="Password">
           <br><br>
           <button type="submit">login</button>

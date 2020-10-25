@@ -2,15 +2,18 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         require_once("connection.php");
 
-        $username = $_POST['username'];
+        $email = $_POST['email'];
         $password = md5($_POST['password']);
 
-        $sql = "SELECT * FROM user WHERE username='$username' AND `password`='$password'";
+        $sql = "SELECT username FROM user WHERE email='$email' AND `password`='$password'";
 
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             $login_string = uniqid(rand(), true);
             $hashed_login_string = md5( $login_string);
+
+            $row = $result->fetch_assoc();
+            $username = $row["username"];
 
             $sql = "INSERT INTO cookie_data (login_string, username) VALUES('$hashed_login_string','$username')";
             if ($conn->query($sql) == TRUE){
