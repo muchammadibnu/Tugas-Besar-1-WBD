@@ -12,7 +12,7 @@
         <a href="#">Home</a>
         <a href="#">History</a>
         <div class="search">
-            <form method="post">
+            <form method="POST">
                 <input type="search" placeholder="Search" required>
                 <input type="submit" name="submit">
             </form>
@@ -27,9 +27,9 @@
 <?php
 
 require 'connection.php';
-    
+$index = 1;
 if (isset($_POST["submit"])) {
-    $str = $_POST["search"];
+    $str = $_POST["submit"];
     $query_search = "SELECT * FROM 'product' WHERE name = '$str'";
     $query_running = $con->query($query_search);
 
