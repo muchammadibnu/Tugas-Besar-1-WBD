@@ -112,6 +112,7 @@ XAMPP dapat diinstall melalui pranala berikut : https://www.apachefriends.org/do
 ### Dashboard Page
 ![](screenshots/dashboard.jpg)
 ### Search Result Page
+![](screenshots/search.jpg)
 ### Chocolate Detail Page
 #### Buy Chocolate Page
 ![](screenshots/chocolatebuy2.png)

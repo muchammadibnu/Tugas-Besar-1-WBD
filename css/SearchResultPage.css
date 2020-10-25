@@ -27,12 +27,16 @@ nav a:hover {
 
 nav .search {
     float: right;
-    width: 300px;
+    width: 200px;
     margin-right: 30px;
 }
 
 nav input[type=search] {
     padding: 6px;
     margin-top: 8px;
-    width: 300px;
+    width: 100px;
+}
+
+nav input[type=submit] {
+    width: 50px;
 }

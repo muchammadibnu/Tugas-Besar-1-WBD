@@ -12,8 +12,9 @@
         <a href="#">Home</a>
         <a href="#">History</a>
         <div class="search">
-            <form action="">
+            <form method="post">
                 <input type="search" placeholder="Search" required>
+                <input type="submit" name="submit">
             </form>
         </div>
         <a href="#">Log out</a>
