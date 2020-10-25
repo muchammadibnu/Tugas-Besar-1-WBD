@@ -62,6 +62,8 @@ CREATE TABLE `product` (
 
 INSERT INTO `product` (`id`, `name`, `price`, `sold`, `amount`, `Description`, `photo`) VALUES
 (1, 'Chocolate 2', 3000, 12, 14, 'Coklat ini merupakan coklat yang dipanggang hingga meleleh, setelah itu dibentuk lalu dibekukan kami juga kurang mengerti mengapa kami melakukan itu', 'contoh.png');
+INSERT INTO `product` (`id`, `name`, `price`, `sold`, `amount`, `Description`, `photo`) VALUES
+(2, 'Chocolate 3', 5000, 14, 17, 'Coklat ini merupakan coklat 2 yang dipanggang hingga meleleh, setelah itu dibentuk lalu dibekukan kami juga kurang mengerti mengapa kami melakukan itu', 'contoh.png');
 
 -- --------------------------------------------------------
 

@@ -48,3 +48,8 @@ nav input[type=search] {
     margin-right: 30px;
     margin-top: 30px;
 }
+
+.card-body {
+    float: left;
+    width: 350px;
+}
