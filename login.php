@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <?php
+    $isAlreadyLoggedIn = FALSE;
     if (isset($_COOKIE['login_string'])){
+        require("connection.php");
+        $login_string = md5($_COOKIE['login_string']);
+
+        $sql = "SELECT username FROM cookie_data WHERE login_string = '$login_string'";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0){
+            $isAlreadyLoggedIn = TRUE;
+        }
+        $conn->close();
+    }
+    if ($isAlreadyLoggedIn){
         echo "<script type='text/javascript'>alert('You already logged in');</script>";
         echo "<script type='text/javascript'>document.location.href='index.php';</script>"; 
     }
