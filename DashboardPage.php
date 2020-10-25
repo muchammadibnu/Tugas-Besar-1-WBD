@@ -61,7 +61,7 @@ $result_user = mysql_query($query_user); -->
         <a href="#">Home</a>
         <a href="#">History</a>
         <div class="search">
-            <form action="">
+            <form method="post">
                 <input type="search" placeholder="Search" required>
             </form>
         </div>
@@ -94,7 +94,7 @@ $result_user = mysql_query($query_user); -->
                     ?>
                     <div class="card">
                         <div class="card-body">
-                            <img src="<?php echo $row['photo']; ?>" class="card-img" alt="Choc0late">
+                            <img src="<?php echo $row['photo']; ?>" class="card-img" alt="Image">
                             <h2 class="card-title"><?php echo $row['name']; ?></h2>
                             <p class="card-amount-sold">Amount sold: <?php echo $row['amount']; ?></p>
                             <p class="card-price">Price : <?php echo $row['price']; ?></p>
@@ -139,3 +139,4 @@ $result_user = mysql_query($query_user); -->
     </div>
 </body>
 </html>
+

@@ -22,3 +22,46 @@
     
 </body>
 </html>
+
+<?php
+
+require 'connection.php';
+    
+if (isset($_POST["submit"])) {
+    $str = $_POST["search"];
+    $query_search = "SELECT * FROM 'product' WHERE name = '$str'";
+    $query_running = $con->query($query_search);
+
+    if($row = $query_running->fetch())
+    {
+        ?>
+        <br><br><br>
+        <div class="chocolateDetail">
+            <img src="<?php echo $row["photo"]; ?>" alt="<?php echo $row["name"]; ?>">
+            <div class="detail">
+                <h3><span>Amount Sold:</span> <?php echo $row["sold"]; ?></h3>
+                <h3><span>Price:</span> Rp <?php 
+                    $price = $row["price"];
+                    $str ="";
+                    $count=0;
+                    while($price>=1){
+                        $str = ($price % 10).$str;
+                        $price = floor($price / 10);
+                        $count = $count + 1;
+                        if($count % 3 ==0){
+                            $str=".".$str;
+                        }
+                    }
+                    echo $str ?>,00</h3>
+                <h3><span>Amount:</span> <?php echo $row["amount"]; ?></h3>
+                <h3><span>Description<span></h3>
+                <p><?php echo $row["description"]; ?></p>
+            </div>
+        </div>
+<?php
+    }
+            else {
+                echo "Chocolate tidak ditemukan";
+            }
+}
+?>
