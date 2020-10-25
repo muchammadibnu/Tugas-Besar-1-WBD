@@ -52,6 +52,16 @@
                 $row = $result->fetch_assoc();
                 $username = $row['username'];
             
+                // catat mapping chocolate name ke chocolate id
+                $mapNameToId = array();
+                $sql = "SELECT id,`name` FROM product";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    while($row = $result->fetch_assoc()) {
+                        $mapNameToId[$row['name']] = $row['id'];
+                    }
+                }
+
                 $sql = "SELECT chocolate_name, amount, total_price, `date`, `time`, `address` 
                         FROM `transaction` WHERE username = '$username' ORDER BY `date` DESC";
                 $result = $conn->query($sql);
@@ -82,7 +92,7 @@
                         }
                         echo '
                             <tr>
-                                <td><a href=chocolate_detail?chocolate_name='.$row['chocolate_name'].'>'.$row['chocolate_name'].'</a></td>
+                                <td><a href=ChocolatePage.php?chocoID='.$mapNameToId[$row['chocolate_name']].'>'.$row['chocolate_name'].'</a></td>
                                 <td>'.$row['amount'].'</td> 
                                 <td>Rp '.$str.',00</td>
                                 <td>'.date('j F Y',strtotime($row['date'])).'</td>
