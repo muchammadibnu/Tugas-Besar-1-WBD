@@ -18,7 +18,6 @@
             </form>
         </div>
         <a href="#">Log out</a>
-
     </nav>
     
     <div class="hello">
