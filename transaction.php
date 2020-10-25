@@ -10,12 +10,34 @@
         if ($result->num_rows > 0){
             $isAlreadyLoggedIn = TRUE;
         }
-        $conn->close();
     }
 
     if (!$isAlreadyLoggedIn){
         echo "<script type='text/javascript'>alert('You have to login first');</script>";
         echo "<script type='text/javascript'>document.location.href='login.php';</script>"; 
+    }
+    $sql = "SELECT * FROM cookie_data WHERE login_string = '$login_string'";
+    $result = $conn->query($sql);
+    if ($result->num_rows == 0){
+        echo "<script type='text/javascript'>alert('You have to login first');</script>";
+        echo "<script type='text/javascript'>document.location.href='login.php';</script>"; 
+    }
+    else{
+        $row = $result -> fetch_assoc();
+        $username = $row["username"];
+        $sql = "SELECT role FROM user WHERE username = '$username'";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0){
+            $row = $result -> fetch_assoc();
+            if($row["role"]!="user"){
+                echo "<script type='text/javascript'>alert('User restricted');</script>";
+                echo "<script type='text/javascript'>document.location.href='index.php';</script>"; 
+            }
+        }
+        else{
+            echo "<script type='text/javascript'>alert('Server goes wrong');</script>";
+            echo "<script type='text/javascript'>document.location.reload();</script>"; 
+        }
     }
 ?>
 <html>
@@ -28,14 +50,14 @@
 <body>
     <header>
         <nav>
-            <a href="#">Home</a>
-            <a href="#">History</a>
+            <a href="DashboardPage.php">Home</a>
+            <a href="transaction.php">History</a>
             <div class="search">
                 <form action="">
                     <input type="search" placeholder="Search" required>
                 </form>
             </div>
-            <a href="#">Log out</a>
+            <a href="action_logout.php">Log out</a>
         </nav>
     </header>
     

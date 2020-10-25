@@ -40,14 +40,14 @@
 <body>
     <header>
         <nav>
-            <a href="#">Home</a>
-            <a href="#">History</a>
+            <a href="DashboardPage.php">Home</a>
+            <a href="ChocolateAddNewPage.php">Add New Chocolate</a>
             <div class="search">
                 <form action="">
                     <input type="search" placeholder="Search" required>
                 </form>
             </div>
-            <a href="#">Log out</a>
+            <a href="action_logout.php">Log out</a>
         </nav>
     </header>
     <div class="chocolate">
