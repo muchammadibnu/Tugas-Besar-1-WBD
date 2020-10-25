@@ -1,6 +1,6 @@
 var cost = 0;
 function doAddAmountStock(maxAmount, price){
-    let amount = + document.getElementsByTagName("p")[2].innerHTML;
+    let amount = + document.getElementsByClassName("detail")[0].getElementsByTagName("p")[1].innerHTML;
     if(amount+1<=maxAmount){
         let str = "";
         let count = 0;
@@ -16,11 +16,11 @@ function doAddAmountStock(maxAmount, price){
             }
         }
         document.getElementsByClassName("totalPrice")[0].getElementsByTagName("h2")[0].innerHTML = "Rp " + str + ",00";
-        document.getElementsByTagName("p")[2].innerHTML = 1+amount;
+        document.getElementsByClassName("detail")[0].getElementsByTagName("p")[1].innerHTML = 1+amount;
     }
 }
 function doDecreaseAmountStock(price){
-    let amount = + document.getElementsByTagName("p")[2].innerHTML;
+    let amount = + document.getElementsByClassName("detail")[0].getElementsByTagName("p")[1].innerHTML;
     if(amount!=1){
         let str = "";
         let count = 0;
@@ -37,7 +37,7 @@ function doDecreaseAmountStock(price){
             }
         }
         document.getElementsByClassName("totalPrice")[0].getElementsByTagName("h2")[0].innerHTML = "Rp " + str + ",00";
-        document.getElementsByTagName("p")[2].innerHTML = amount - 1;
+        document.getElementsByClassName("detail")[0].getElementsByTagName("p")[1].innerHTML = amount - 1;
     }
 }
 const formBuy = document.getElementById("formBuy");
@@ -49,8 +49,8 @@ function doBuy(event){
         document.location.reload();
     }
     else{
-        let amount = document.getElementsByTagName("p")[2].innerHTML;
-        let name = document.getElementsByTagName("h3")[0].innerHTML;
+        let amount = document.getElementsByClassName("detail")[0].getElementsByTagName("p")[1].innerHTML;
+        let name = document.getElementsByClassName("detail")[0].getElementsByTagName("h3")[0].innerHTML;
         console.log(address,amount,name,cost);
         var xhr = new XMLHttpRequest();
         let url = "action_buy.php";

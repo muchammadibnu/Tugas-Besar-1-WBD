@@ -58,6 +58,8 @@ body .chocolate .chocolateDetail .detail h4,body .chocolate .chocolateDetail .de
     text-align: justify;
 }
 .submit button{
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
     cursor: pointer;
     background: #2b3147;
     text-transform: uppercase;
@@ -85,7 +87,7 @@ button:hover{
     line-height: 1;
     display: flex;
 }
-a{
+#countAmount a{
     cursor: pointer;
     display: flex;
     border: 1px solid rgba(0,0,0,.09);
@@ -99,7 +101,7 @@ a{
     text-decoration: none;
 }
 
-a:hover{
+#countAmount a:hover{
     background-color: rgb(220, 220, 220);
     color :#2b3147;
 }
@@ -176,7 +178,7 @@ nav input[type=search] {
         margin-right: 20px;
     }
     body .submit button{
-        font-size: 14px;
+        font-size: 12px;
         padding: 10px 40px;
     }
     body .submit button:last-child{
